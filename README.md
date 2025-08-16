@@ -5,9 +5,6 @@
 - [![QEMU](https://img.shields.io/badge/QEMU-Emulator-blue)](https://www.qemu.org/) (or another emulator)
 - [![Hex Editor](https://img.shields.io/badge/Hex-Editor-blue)](https://mh-nexus.de/en/hxd/) (optional)
 
-## License
-- [![License](https://img.shields.io/badge/MIT-License-green)](https://github.com/RandomX42069/APasm/blob/main/LICENSE)
-
 ## Example Usage
 ```python
 from AvalonPasm import *
@@ -36,4 +33,7 @@ env = APasmEnv(  # your code will be packaged automatically
 )
 env.Push() # -> D:/APasmEnv Output/Untitled APasm Output File No{rand.randint(0,1000000)}
 ```
+
+## License
+- [![License](https://img.shields.io/badge/MIT-License-green)](https://github.com/RandomX42069/APasm/blob/main/LICENSE)
   
