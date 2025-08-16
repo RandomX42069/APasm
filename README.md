@@ -1,16 +1,18 @@
 # APasm
 
 ## What is APasm?
-- APasm is a library for coding and support Assembly in Python and you can directly interact with pure binary. APasm stands for "Avalon Python Assembly", notice something weird in the word "Avalon"? Its the library main name. APasm latest version is 1.0. APasm support basic instructions from Assembly such as:
-- ADD
-- ADC
-- CLI
-- HLT
-- JMP
-- MOV
-- OR
-- PUSH(Segment Registers only)
-- POP(Segment Registers only)
+- APasm is a library for coding and supporting Assembly in Python and you can directly interact with pure binary. APasm stands for "Avalon Python Assembly", notice something weird in the word "Avalon"? Its the library main name. APasm lastest version is 1.0. APasm supports basic Assembly instructions such as:
+| Instruction | Notes                        |
+|------------|-------------------------------|
+| ADD        | Basic addition                |
+| ADC        | Add with carry                |
+| CLI        | Clear interrupt flag          |
+| HLT        | Halt CPU                      |
+| JMP        | Jump                          |
+| MOV        | Move data                     |
+| OR         | Bitwise OR                    |
+| PUSH       | Segment registers only        |
+| POP        | Segment registers only        |
 
 ## Requirements
 - [![Python3](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
