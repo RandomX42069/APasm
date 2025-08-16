@@ -7,3 +7,18 @@ Require:
 License:
 - [![License](https://img.shields.io/badge/MIT-License-green)](https://github.com/RandomX42069/APasm/blob/main/License.md)
 
+Example Usage:
+---
+```python
+from AvalonPasm import *
+
+setah       =     MOV_imm("ah", 0x0E)                           # call BIOS print
+setal       =     MOV_imm("al", 0x64)                           # print "d"
+call        =     BIOSCALL_10h
+
+total       =     setah + setal + call                          # mix the code
+bootloader  =     total + cli() + hlt() + jmp(-2) + BootPad()   # boot loop
+
+with open("Bootloader.bin", "w") as f:
+  f.write(bootloader)
+```
