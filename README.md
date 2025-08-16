@@ -1,5 +1,17 @@
 # APasm
 
+## What is APasm?
+- APasm is a library for coding and support Assembly in Python and you can directly interact with pure binary. APasm stands for "Avalon Python Assembly", notice something weird in the word "Avalon"? Its the library main name. APasm lastest version is 1.0. APasm support basic instructions from Assembly such as:
+- ADD
+- ADC
+- CLI
+- HLT
+- JMP
+- MOV
+- OR
+- PUSH(Segment Registers only)
+- POP(Segment Registers only)
+
 ## Requirements
 - [![Python3](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
 - [![QEMU](https://img.shields.io/badge/QEMU-Emulator-blue)](https://www.qemu.org/) (or another emulator)
@@ -7,7 +19,7 @@
 
 ## Example Usage
 ```python
-from AvalonPasm import *
+from AvalonPasm import * # or the main loader file name
 
 setah      = MOV_imm("ah", 0x0E)  # call BIOS print
 setal      = MOV_imm("al", 0x64)  # print "d"
@@ -25,13 +37,19 @@ with open("Bootloader.bin", "wb") as f:
 
 ## APasmEnv Usage
 ```python
-from AvalonPasm import *
+from AvalonPasm import * # or the main loader file name
 env = APasmEnv(  # your code will be packaged automatically
   MOV_imm("ah", 0x0E),
   MOV_imm("al", 0x64),  # print d
   BIOSCALL_10h()  
 )
-env.Push() # -> D:/APasmEnv Output/Untitled APasm Output File No{rand.randint(0,1000000)}
+env.Push()
+# the Push function create a dir named APasmEnv Output and your file will be created right here
+# you can edit the dir param to your dir you want
+# NOTE: if you don't rename your file to something then the default file name will be Untitled APasm Output File No{rand.randint(0,1000000)} which is generic
+
+# the ClearOutPutDir function will clear APasm output directory or D:/APasmEnv Output/<files>
+# CAUTION: ALL FILE INSIDE D:/APasmEnv Output WILL BE UTTERLY DELETED!
 ```
 
 ## QEMU Usage
