@@ -34,6 +34,14 @@ env = APasmEnv(  # your code will be packaged automatically
 env.Push() # -> D:/APasmEnv Output/Untitled APasm Output File No{rand.randint(0,1000000)}
 ```
 
+## QEMU Usage
+```python
+from AvalonPasm import *
+emulator = QEMU()
+emulator.run("D:/myBootloader.bin")    # onPath: True. Default Type: qemu-system-x86_64. Default External CMD: -fda. `*aargs` exists purely for passing raw subprocess flags without breaking the API.
+emulator.run("D:/myBootloader.bin", onPath=False, QEMUPath="C:/Users/MyUserName/QEMU/<your QEMU type choice>.exe")
+```
+
 ## License
 - [![License](https://img.shields.io/badge/MIT-License-green)](https://github.com/RandomX42069/APasm/blob/main/LICENSE)
   
