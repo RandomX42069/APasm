@@ -1,7 +1,7 @@
 # APasm
 
 ## What is APasm?
-- APasm is a library for coding and support Assembly in Python and you can directly interact with pure binary. APasm stands for "Avalon Python Assembly", notice something weird in the word "Avalon"? Its the library main name. APasm lastest version is 1.0. APasm support basic instructions from Assembly such as:
+- APasm is a library for coding and support Assembly in Python and you can directly interact with pure binary. APasm stands for "Avalon Python Assembly", notice something weird in the word "Avalon"? Its the library main name. APasm latest version is 1.0. APasm support basic instructions from Assembly such as:
 - ADD
 - ADC
 - CLI
@@ -19,7 +19,7 @@
 
 ## Example Usage
 ```python
-from AvalonPasm import * # or the main loader file name
+from APasm import * # or the main loader file name
 
 setah      = MOV_imm("ah", 0x0E)  # call BIOS print
 setal      = MOV_imm("al", 0x64)  # print "d"
@@ -37,7 +37,7 @@ with open("Bootloader.bin", "wb") as f:
 
 ## APasmEnv Usage
 ```python
-from AvalonPasm import * # or the main loader file name
+from APasm import * # or the main loader file name
 env = APasmEnv(  # your code will be packaged automatically
   MOV_imm("ah", 0x0E),
   MOV_imm("al", 0x64),  # print d
@@ -54,7 +54,7 @@ env.Push()
 
 ## QEMU Usage
 ```python
-from AvalonPasm import *
+from AnPasm import *
 emulator = QEMU()
 emulator.run("D:/myBootloader.bin")    # onPath: True. Default Type: qemu-system-x86_64. Default External CMD: -fda. `*aargs` exists purely for passing raw subprocess flags without breaking the API.
 emulator.run("D:/myBootloader.bin", onPath=False, QEMUPath="C:/Users/MyUserName/QEMU/<your QEMU type choice>.exe")
