@@ -27,7 +27,9 @@ setal      = MOV_imm("al", 0x64)  # print "d"
 call       = BIOSCALL_10h()
 
 total      = setah + setal + call
-bootloader = total + cli() + hlt() + jmp(-2) + BootPad()
+bootloader = total + cli() + hlt() + jmp(-2)
+bootpadder = BootPad(bootloader)
+bootloader += bootpadder
 
 with open("Bootloader.bin", "wb") as f:
     f.write(bootloader)
@@ -63,4 +65,5 @@ emulator.run("D:/myBootloader.bin", onPath=False, QEMUPath="C:/Users/MyUserName/
 
 ## License
 - [![License](https://img.shields.io/badge/MIT-License-green)](https://github.com/RandomX42069/APasm/blob/main/LICENSE)
+
   
